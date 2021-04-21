@@ -86,6 +86,7 @@ export default class NumberToTextConverter {
       .map((numText, index) =>
         numText.split('').every(char => char == '0') ? numText : numText.concat(' ' + this.#pointUnit[index]).replace('satu ribu', this.#conventionMap['satu ribu']))
       .reverse()
-      .join(', ')
+      .join(' ')
+      .concat('.')
   }
 }
